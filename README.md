@@ -1,1 +1,1 @@
-1[pear](https://media.tenor.com/Z1TA7g_H-YQAAAAM/pearto-kasane-teto.gif)
+![pear](https://media.tenor.com/Z1TA7g_H-YQAAAAM/pearto-kasane-teto.gif)
