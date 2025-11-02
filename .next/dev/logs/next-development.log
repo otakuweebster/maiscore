@@ -1,0 +1,104 @@
+[00:00:00.778] Server  LOG      ✓ Ready in 542ms
+[00:00:04.305] Server  ERROR    ⨯ ./app/components/OtakuUserProfile.tsx:3:11
+Parsing ecmascript source code failed
+  1 | export default function OtakuUserProfile()
+  2 | {
+> 3 |     return(
+    |           ^
+> 4 |         
+    | ^^^^^^^^
+> 5 |     )
+    | ^^^^^^
+  6 | }
+
+Parenthesized expression cannot be empty
+
+Import trace:
+  Server Component:
+    ./app/components/OtakuUserProfile.tsx
+    ./app/layouts/MaiLandingPage.tsx
+    ./app/layout.tsx
+
+
+[00:00:04.868] Browser ERROR   uncaughtError: Error: ./app/components/OtakuUserProfile.tsx:3:11
+Parsing ecmascript source code failed
+  1 | export default function OtakuUserProfile()
+  2 | {
+> 3 |     return(
+    |           ^
+> 4 |         
+    | ^^^^^^^^
+> 5 |     )
+    | ^^^^^^
+  6 | }
+
+Parenthesized expression cannot be empty
+
+Import trace:
+  Server Component:
+    ./app/components/OtakuUserProfile.tsx
+    ./app/layouts/MaiLandingPage.tsx
+    ./app/layout.tsx
+
+
+[00:00:05.055] Browser ERROR   ./app/components/OtakuUserProfile.tsx:3:11
+Parsing ecmascript source code failed
+  1 | export default function OtakuUserProfile()
+  2 | {
+> 3 |     return(
+    |           ^
+> 4 |         
+    | ^^^^^^^^
+> 5 |     )
+    | ^^^^^^
+  6 | }
+
+Parenthesized expression cannot be empty
+
+Import trace:
+  Server Component:
+    ./app/components/OtakuUserProfile.tsx
+    ./app/layouts/MaiLandingPage.tsx
+    ./app/layout.tsx
+[00:00:05.438] Browser ERROR   ./app/components/OtakuUserProfile.tsx:3:11
+Parsing ecmascript source code failed
+  1 | export default function OtakuUserProfile()
+  2 | {
+> 3 |     return(
+    |           ^
+> 4 |         
+    | ^^^^^^^^
+> 5 |     )
+    | ^^^^^^
+  6 | }
+
+Parenthesized expression cannot be empty
+
+Import trace:
+  Server Component:
+    ./app/components/OtakuUserProfile.tsx
+    ./app/layouts/MaiLandingPage.tsx
+    ./app/layout.tsx
+[00:00:40.800] Server  LOG      ✓ Compiled in 26ms
+[00:00:54.310] Server  LOG      ✓ Compiled in 21ms
+[00:01:21.735] Server  LOG      ✓ Compiled in 9ms
+[00:01:23.754] Server  LOG      ✓ Compiled in 26ms
+[00:04:09.230] Server  ERROR    ⨯ Error: Image Optimization using the default loader is not compatible with `{ output: 'export' }`.
+  Possible solutions:
+    - Remove `{ output: 'export' }` and run "next start" to run server mode including the Image Optimization API.
+    - Configure `{ images: { unoptimized: true } }` in `next.config.js` to disable the Image Optimization API.
+  Read more: https://nextjs.org/docs/messages/export-image-api
+[00:04:09.452] Browser ERROR   uncaughtError: Error: Image Optimization using the default loader is not compatible with `{ output: 'export' }`.
+  Possible solutions:
+    - Remove `{ output: 'export' }` and run "next start" to run server mode including the Image Optimization API.
+    - Configure `{ images: { unoptimized: true } }` in `next.config.js` to disable the Image Optimization API.
+  Read more: https://nextjs.org/docs/messages/export-image-api
+[00:05:49.879] Server  ERROR    ⨯ Error: Image with src "/maiscore.png" is missing required "height" property.
+[00:05:50.949] Browser ERROR   uncaughtError: Error: Image with src "/maiscore.png" is missing required "height" property.
+[00:07:22.349] Browser ERROR   uncaughtError: Error: Image with src "assets/maiscore.png" is missing required "width" property.
+[00:07:32.859] Browser WARN    Image with src "http://localhost:3000/assets/maiscore.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:07:32.970] Browser WARN    Image with src "assets/maiscore.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:08:13.911] Browser ERROR   uncaughtError: Error: Image with src "assets/maiscore.png" is missing required "width" property.
+[00:09:22.811] Browser WARN    Image with src "assets/maiscore.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
