@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description: "Otaku's Personal MaiMai Score Sheet",
 };
 
+
+
 export default function RootLayout() {
   return (
     <html lang="en">
