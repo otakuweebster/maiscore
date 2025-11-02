@@ -14,7 +14,7 @@ const headers = {
 //Get Current Data from Otaku
 export async function getOtakuData()
 {
-    if (!localStorage.getItem('otakuMaiProfile'))
+    if (!sessionStorage.getItem('otakuMaiProfile'))
     {
         await axios.get(profileURL, {
             headers: headers
@@ -22,7 +22,7 @@ export async function getOtakuData()
         .then(response => {
             // console.log(response.data);
             // console.log(JSON.stringify(response.data.data[0]))
-            localStorage.setItem('otakuMaiProfile', JSON.stringify(response.data.data[0]))
+            sessionStorage.setItem('otakuMaiProfile', JSON.stringify(response.data.data[0]))
             return Promise.resolve;
         })
         .catch(error => {
