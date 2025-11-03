@@ -3,8 +3,10 @@ import Image from "next/image";
 
 export default function RatingCard({scoreData})
 {
+    console.log("here's what I have for bruh: " + scoreData)
     let color = "purple";
     let scoreValue = scoreData.difficulty_level.value;
+    let lowRank = ['D', 'C', 'B', 'BBB', 'BBB'];
     
     // //COLOR CHANGE
     switch (scoreValue)
@@ -25,7 +27,7 @@ export default function RatingCard({scoreData})
     }
 
     return(
-      <div className="h-fit w-full flex flex-col gap-2">
+      <div className="h-fit w-full flex flex-col gap-2 p-3">
             <div className="grid grid-cols-2 gap-1 justify-between h-fit">
                 <div className="text-4xl h-fit" style={{
                     color: "white",
@@ -60,7 +62,7 @@ export default function RatingCard({scoreData})
                                 backgroundColor: `rgba(${color},1)`,
                                 backgroundImage: "linear-gradient(rgb(0 0 0/25%) 0 0)"
                             }}>ACHEIVEMENT</div>
-                            <div className="flex flex-row justify-center items-center h-full gap-2">
+                            <div className="flex flex-row justify-center items-center h-full gap-2 p-1">
                                 <div className="flex flex-col">
                                      <div className="text-6xl text-white text-shadow-lg/30" style={{
                                         "WebkitTextStroke": "5px black",
@@ -72,10 +74,18 @@ export default function RatingCard({scoreData})
                                     }}>{scoreData.score_formatted}</div>
                                 </div>
                                 <div className="flex flex-col h-full justify-center items-center">
-                                    <Image src={`https://maitea.app/storage/ranks/rank_${scoreData.rank}.webp`} width={75} height={75} unoptimized/>
+                                    {
+                                        lowRank.indexOf(scoreData.rank) >= 0 ? (<div className="text-4xl text-white text-start text-shadow-lg/30 ml-5" style={{
+                                        "WebkitTextStroke": "5px black",
+                                        paintOrder: "stroke fill"
+                                    }}>{scoreData.rank}</div>) : (<Image src={`https://maitea.app/storage/ranks/rank_${scoreData.rank}.webp`} width={75} height={75} unoptimized/>)
+
+                                    }
+
+                                    
                                     {
                                         scoreData.full_combo_label != null &&
-                                        <Image src="https://maitea.app/storage/ranks/rank_AAA.webp" width={75} height={75} unoptimized/>
+                                        <Image src="https://maitea.app/storage/medals/full_combo.webp" width={75} height={75} unoptimized/>
                                     }
                                 </div>
                             </div>

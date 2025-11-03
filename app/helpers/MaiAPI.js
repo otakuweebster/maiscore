@@ -44,7 +44,7 @@ export async function getOtakuData()
     }
 }
 
-//Get the latest score data from Otaku, latest :)
+//Get the latest score data from Otaku :)
 export async function getOtakuScoreLatest()
 {
     if (!sessionStorage.getItem('otakuLatestScore'))
@@ -54,6 +54,26 @@ export async function getOtakuScoreLatest()
         })
         .then(response => {
             sessionStorage.setItem('otakuLatestScore', JSON.stringify(response.data.data[0]))
+            return Promise.resolve;
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+}
+
+//Get all score data from Otaku
+export async function getOtakuAllScore()
+{
+    console.log("yes");
+    if (!sessionStorage.getItem('otakuAllScore'))
+    {
+
+        await axios.get(playsURL, {
+            headers: headers
+        })
+        .then(response => {
+            sessionStorage.setItem('otakuAllScore', JSON.stringify(response.data.data))
             return Promise.resolve;
         })
         .catch(error => {
