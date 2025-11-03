@@ -14,18 +14,16 @@ export default function MaiLandingPage()
 
         useEffect(() => {
             getOtakuScoreLatest().then(() => {
-                console.log("I FIRED");
+                
                 if(sessionStorage.getItem('otakuLatestScore'))
                 {
                     setDataScore(JSON.parse(sessionStorage.getItem('otakuLatestScore')));
                     
                     getOtakuData().then(() => {
-                    if (localStorage.getItem('otakuMaiProfile'))
-                    {
+                        setLoading(false);
                         setUserData(JSON.parse(sessionStorage.getItem('otakuMaiProfile')));
                         setDisplay(true);
-                        setLoading(false);
-                    }});
+                    });
 
                 }
             })
