@@ -3,27 +3,12 @@ import { useEffect, useState } from 'react';
 import { getOtakuData } from '../helpers/MaiAPI';
 import Image from "next/image";
 
-export default function OtakuUserProfile()
+export default function OtakuUserProfile({data})
 {
-    const [showUser, setUser] = useState(false);
-    const [data, setData] = useState();
 
-
-    useEffect(() => {
-        getOtakuData().then(() => {
-            if (localStorage.getItem('otakuMaiProfile'))
-            {
-                setData(JSON.parse(sessionStorage.getItem('otakuMaiProfile')));
-                setUser(true);
-            }
-
-        });
-
-    }, []);
 
     return(
         <div>
-            {showUser && (
                 <div id="profile" className="w-full grid grid-cols-2 gap-2 p-10 rounded-4xl shadow-2xl/50" style={{
                     backgroundImage: `url(${data.options.frame.webp}), url(${data.options.icon_deka.webp})`,
                     backgroundSize: "cover, 50%",
@@ -53,7 +38,6 @@ export default function OtakuUserProfile()
                         </div>
                     </div>
                 </div>
-            )}
         </div>
     )
 }
