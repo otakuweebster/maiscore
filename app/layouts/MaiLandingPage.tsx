@@ -5,6 +5,7 @@ import RatingCard from "../components/RatingCard";
 import Image from "next/image";
 import { useEffect, useState } from 'react';
 import OtakuPlays from "../components/OtakuPlays";
+import MaiScoreIntro from "../components/MaiScoreIntro";
 
 export default function MaiLandingPage()
 {
@@ -42,27 +43,37 @@ export default function MaiLandingPage()
     return(
         <div id="main" className="w-5/6 h-screen mx-auto flex justify-center items-center">
             <div className="flex flex-col w-full justify-center items-center">
-                <Image src="assets/maiscore.png" width={447} height={162} unoptimized/>
                 { showLoading && (
-                    <Image src="https://media.tenor.com/HvJ48-NOlfIAAAAj/teto-tetoris.gif" width={200} height={200} unoptimized/>
+                    <div className="w-screen h-screen">
+                        <video playsInline autoPlay muted loop id="intro" oncontextmenu="return false;" style={{
+                            objectFit: "contain",
+                            zIndex: 1,
+                            top: 0,
+                            left: 0
+                        }}>
+                            <source src="assets/MaiScoreIntro.mp4" type="video/mp4"></source>
+                        </video>
+                    </div>
                 )}
                 {showData && (
-                    <div className={'flex flex-auto gap-10 w-full h-fit justify-center items-center'}>
-                        <div className="flex flex-col gap-10">
-                            <OtakuUserProfile data={userData}/>
-                                <div className="text-4xl h-fit text-center" style={{
-                                    color: "white",
-                                    "WebkitTextStroke": `5px black`,
-                                    paintOrder: "stroke fill",
-                                    textShadow: `black 0 2px 5px`
-                                }}>Latest Play: 
-                                </div>
-                            <RatingCard scoreData={dataScore}/>
-                        </div>
-
+                    <div className="flex flex-col justify-center items-center">
+                        <Image src="assets/maiscore.png" width={447} height={162} unoptimized/>
+                        <div className={'flex flex-auto gap-10 w-full h-fit justify-center items-center'}>
+                            <div className="flex flex-col gap-10">
+                                <OtakuUserProfile data={userData}/>
+                                    <div className="text-4xl h-fit text-center" style={{
+                                        color: "white",
+                                        "WebkitTextStroke": `5px black`,
+                                        paintOrder: "stroke fill",
+                                        textShadow: `black 0 2px 5px`
+                                    }}>Latest Play: 
+                                    </div>
+                                <RatingCard scoreData={dataScore}/>
+                            </div>
                         <OtakuPlays scoreArray={dataAllScore}/>
                     </div>
-                    
+                    </div>
+                
                 )}
                 
             </div>        

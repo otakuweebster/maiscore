@@ -17,7 +17,20 @@ body {
 
 #mainbody
 {
-  background-image: url("../public/assets/bg.png");
+  background-image: url('../public/assets/bgcity.png'), url("../public/assets/bg.png");
   background-size: cover;
 }
+
+@keyframes cityScroll
+{
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -100% 0;
+  }
+}
+
+
 
